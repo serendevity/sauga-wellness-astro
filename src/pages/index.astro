@@ -3,12 +3,11 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
 import { YouTube } from 'astro-embed';
 import { getPermalink } from '~/utils/permalinks';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Sauga Wellness Foundation',
@@ -26,7 +25,6 @@ const metadata = {
         text: 'Get Involved',
         href: getPermalink('/pricing'),
       },
-      { text: 'Learn more', href: '#features' },
     ]}
   >
     <Fragment slot="title">
@@ -34,8 +32,8 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Our vision is to increase awareness and accessibilty to existing healthcare resources by proactively engaging
-      marginalized and racialized communities and newcomers in their own languages.
+      Our vision is to enhance awareness and accessibilty to healthcare resources by actively engaging marginalized,
+      racialized communities and newcomers in their native languages.
     </Fragment>
 
     <Fragment slot="image">
@@ -54,25 +52,12 @@ const metadata = {
   <Features2
     id="about-us"
     title="About us"
-    subtitle="Sauga Wellness Foundation is a not for profit organization. We are committed to building resilient and healthy communities. We are a group of health and wellness advocates and activists dedicated to improving the lives of the people we serve. Our mission is to share our knowledge and experiences with our community to improve your health and wellness, & overall quality of life."
+    subtitle="Sauga Wellness Foundation is a not for profit organization dedicated to fostering resilient and healthy communities. We are a team of passionate health and wellness advoccates commited to improving the lives of those we server. Our mission is to share our expertise and experiences to enhance the health, wellness and overall quality of life for our community."
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Discover the impressive impact"
-    subtitle="The numbers below reflect the trust our community has placed in us and the remarkable outcomes we've helped them achieve."
-    stats={[
-      { title: 'Arrivals', amount: '82K' },
-      { title: 'Coach', amount: '87' },
-      { title: 'User Ratings', amount: '4.8' },
-      { title: 'Satisfied Clients', amount: '116K' },
-    ]}
-  />
 
   <!-- Brands Widget ****************** -->
 
@@ -154,50 +139,18 @@ const metadata = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
+  <Features
     title="Let us know how we can help"
-    subtitle="We’re here to help and answer any question you might have."
-    columns={4}
+    subtitle="We're here to help and answer any question you might have."
+    columns={2}
     items={[
       {
-        title: 'Phone',
+        title: 'Phone: +1-416-651-0420',
         icon: 'tabler:phone',
-        callToAction: {
-          target: '_blank',
-          text: 'Call us',
-          href: '/',
-          variant: 'link',
-        },
       },
       {
-        title: 'Email',
+        title: 'Email: info@saugawellness.com',
         icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Write to us',
-          href: '/',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Chat with sales',
-        icon: 'tabler:message-circle',
-        callToAction: {
-          target: '_blank',
-          text: 'Start chatting',
-          href: '/',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Chat with support',
-        icon: 'tabler:message-circle',
-        callToAction: {
-          target: '_blank',
-          text: 'Start chatting',
-          href: '/',
-          variant: 'link',
-        },
       },
     ]}
   />
@@ -211,15 +164,14 @@ const metadata = {
         target: '_blank',
         text: 'Get involved',
         href: getPermalink('/pricing'),
-        icon: 'tabler:hand-stop',
       },
     ]}
   >
     <Fragment slot="title">Be a part of our vision</Fragment>
 
     <Fragment slot="subtitle">
-      Discover a dynamic work environment, unparalleled growth opportunities, and the chance to make a meaningful
-      impact.
+      Become part of vibrant, purpose driven team where you will find exciting opportunities and the chance to make a
+      real, lasting impact on the community. Together we can shape healthier, more resilient lives.
     </Fragment>
   </CallToAction>
 </Layout>
