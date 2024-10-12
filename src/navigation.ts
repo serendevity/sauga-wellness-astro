@@ -19,7 +19,7 @@ export const headerData = {
       href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: 'Download', href: '', target: '_blank' }],
+  actions: [{ text: 'Donate', href: '', target: '_blank', variant: 'primary' }],
 };
 
 export const footerData = {
