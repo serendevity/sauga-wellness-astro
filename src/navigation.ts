@@ -2,7 +2,7 @@ import type { Props as HeaderProps } from './components/widgets/Header.astro';
 import type { Props as FooterProps } from './components/widgets/Footer.astro';
 import { getPermalink, getHomePermalink } from './utils/permalinks';
 
-export const headerData = {
+export const headerData: HeaderProps = {
   links: [
     {
       text: 'Home',
@@ -22,9 +22,10 @@ export const headerData = {
     },
   ],
   actions: [{ text: 'Donate', href: '', target: '_blank', variant: 'primary' }],
-} as HeaderProps;
+};
 
-export const footerData = {
+export const footerData: FooterProps = {
+  links: [],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
@@ -36,4 +37,4 @@ export const footerData = {
   ],
   footNote: `&copy; 2023 -${new Date().getFullYear()} · All rights reserved.
   `,
-} as FooterProps;
+};
