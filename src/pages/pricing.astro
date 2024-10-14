@@ -15,20 +15,54 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText
-    tagline="Memberships"
-    title="Be a part of our journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
+  <HeroText title="Be a part of our journey" subtitle="Join us and contribute to a healthier, more inclusive future!" />
+
+  <Features3
+    title="Ways to get involoved"
+    subtitle="We offer a variety of ways to contribute, whether you prefer hands-on involvement at events or sharing your expertise through educationcatoin workshop. Explore the diffeent ways you can volunteer"
+    columns={2}
+    items={[
+      {
+        title: 'Community Outreach Volunteer',
+        description:
+          'Assist in spreading awareness about our health and wellness programs by engaging with local communities, attending events, and distributing informational materials.',
+        icon: 'tabler:stairs',
+      },
+      {
+        title: 'Impact',
+        description: `Help marginalized and underserved communities access valuable healthcare resources and wellness education.`,
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Event Support Volunteer',
+        description:
+          'Join us at fundraising and community wellness events to assist with setup, registration, managing activities, and providing support to guests. ',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: 'Impact',
+        description: `Ensure our events run smoothly, maximizing their success in raising funds and awareness for our cause.`,
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Health and Wellness Workshop Facilitator',
+        description:
+          'Share your expertise in areas such as nutrition, mental health, or fitness by facilitating workshops or informational sessions for our community members.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Impact',
+        description: `Empower individuals with knowledge and tools to improve their overall health and well-being`,
+        icon: 'tabler:accessible',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
   />
-
-  <!-- Pricing Widget ******************* -->
-
   <Prices
-    title="Our memberhips"
-    subtitle="Only pay for what you need"
+    title="Ways to get involved"
     prices={[
       {
-        title: 'basic',
+        title: 'Community Outreach Volunteer',
         subtitle: 'Optimal choice for personal use',
         price: 29,
         period: 'per month',
@@ -53,7 +87,7 @@ const metadata = {
         },
       },
       {
-        title: 'standard',
+        title: 'Event Support Volunteer',
         subtitle: 'Optimal choice for small teams',
         price: 69,
         period: 'Per Month',
@@ -79,11 +113,9 @@ const metadata = {
           text: 'Get started',
           href: '#',
         },
-        hasRibbon: true,
-        ribbonTitle: 'popular',
       },
       {
-        title: 'premium',
+        title: 'Health & Wellness Workshop Facilitator',
         subtitle: 'Optimal choice for companies',
         price: 199,
         period: 'Per Month',
@@ -108,47 +140,6 @@ const metadata = {
         },
       },
     ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
-    items={[
-      {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
-      },
-      {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
-      },
-      {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
-        icon: 'tabler:headset',
-      },
-    ]}
-    classes={{ container: 'max-w-5xl' }}
   />
 
   <!-- Steps Widget ****************** -->
