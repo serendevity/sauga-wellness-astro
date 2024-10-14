@@ -1,3 +1,5 @@
+import type { Props as HeaderProps } from './components/widgets/Header.astro';
+import type { Props as FooterProps } from './components/widgets/Footer.astro';
 import { getPermalink, getHomePermalink } from './utils/permalinks';
 
 export const headerData = {
@@ -20,7 +22,7 @@ export const headerData = {
     },
   ],
   actions: [{ text: 'Donate', href: '', target: '_blank', variant: 'primary' }],
-};
+} as HeaderProps;
 
 export const footerData = {
   secondaryLinks: [
@@ -28,12 +30,10 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: '#' },
-    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: '#' },
+    { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@SaugaWellness' },
   ],
-  footNote: `&copy; ${new Date().getFullYear()} · All rights reserved.
+  footNote: `&copy; 2023 -${new Date().getFullYear()} · All rights reserved.
   `,
-};
+} as FooterProps;

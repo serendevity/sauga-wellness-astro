@@ -22,12 +22,14 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Get Involved',
-        href: getPermalink('/pricing'),
+        href: getPermalink('/involve'),
       },
     ]}
   >
     <Fragment slot="title">
-      Awareness &#183; <span class="text-accent dark:text-white highlight">Advocacy</span> &#183; Accessibilty
+      Awareness <span class="hidden md:inline">&#183;</span>
+      <span class="text-accent dark:text-white highlight">Advocacy</span>
+      <span class="hidden md:inline">&#183;</span> Accessibilty
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -67,7 +69,7 @@ const metadata = {
       {
         title: 'Individual Services',
         description:
-          "A dedicated mentor will personalized one-on-one coaching by finding the food and lifestyle that works best for you. We'll provide you wit health care resources that will help you navigate the wellness path that works best for you. Our emphasis is on self love and self care. If you take care of yourself, you will be in a much better position to take care of your loved ones.",
+          "A dedicated mentor will provide personalized one-on-one coaching by finding the food and lifestyle that works best for you. We'll provide you with health care resources that will help you navigate the wellness path that works best for you. Our emphasis is on self love and self care. If you take care of yourself, you will be in a much better position to take care of your loved ones.",
         icon: 'flat-color-icons:document',
       },
       {
@@ -113,9 +115,8 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        target: '_blank',
         text: 'Get involved',
-        href: getPermalink('/pricing'),
+        href: getPermalink('/involve'),
       },
     ]}
   >
