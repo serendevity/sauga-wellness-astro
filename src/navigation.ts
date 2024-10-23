@@ -17,6 +17,10 @@ export const headerData: HeaderProps = {
       href: getHomePermalink() + '#services',
     },
     {
+      text: 'Team',
+      href: getPermalink('/involve') + '#directors',
+    },
+    {
       text: 'Contact',
       href: getPermalink('/contact'),
     },
@@ -31,7 +35,11 @@ export const footerData: FooterProps = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: 'https://www.instagram.com/saugawellness/',
+    },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@SaugaWellness' },
   ],

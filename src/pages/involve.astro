@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
   title: 'Get Involved',
@@ -123,6 +124,41 @@ const metadata = {
         variant: 'primary',
         text: 'Get started now',
         href: '/',
+      },
+    ]}
+  />
+
+  <Testimonials
+    id="directors"
+    title="Board of Directors"
+    testimonials={[
+      {
+        testimonial: `Sahar has been a professional in business and finances for 23 years and is serving as a chief executive officer at Sauga wellness foundation, which believes in accessibility & advocacy of the health and wellness industry for all. Sahar has been a community activist and volunteer for 20 years and is a Registered holistic nutritionist. She holds a degree in Commerce and Economics.`,
+        name: 'Sahar Salman',
+        job: 'Chair',
+        image: {
+          src: '~/assets/images/2.png',
+          alt: 'Sahar Salman Image',
+        },
+      },
+      {
+        testimonial: `Shimaa is an international medical graduate pediatric oncologist and has a Master of Health Administration and Management from the University of Toronto. Since 2013, Shimaa has worked with many nonprofit health organizations working with immigrants and refugees. She is very passionate and leads health awareness programs.`,
+        name: 'Shimaa Nassif',
+        job: 'Director Health Awareness',
+        image: {
+          src: '~/assets/images/1.png',
+          alt: 'Josh Wilkinson Image',
+        },
+      },
+      {
+        testimonial:
+          'Bushra is an international medical graduate. Presently working at a renowned cardiology clinic. She has been an activist and an advocate for mental health for more than 30 years. Bushra is an active member of our community who volunteer on regular basis besides her busy life.',
+        name: 'Bushra Rehan',
+        job: 'Director Newcomer Services',
+        image: {
+          src: '~/assets/images/3.png',
+          alt: 'Sidney Hansen Image',
+        },
       },
     ]}
   />
