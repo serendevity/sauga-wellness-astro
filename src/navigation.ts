@@ -40,7 +40,6 @@ export const footerData: FooterProps = {
       icon: 'tabler:brand-instagram',
       href: 'https://www.instagram.com/saugawellness/',
     },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@SaugaWellness' },
   ],
   footNote: `&copy; 2023 -${new Date().getFullYear()} · All rights reserved.
