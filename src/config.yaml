@@ -1,6 +1,6 @@
 site:
   name: SaugaWellness
-  site: 'https://sauga-wellness-astro.netlify.app/'
+  site: 'https://saugawellness.com'
   base: '/'
   trailingSlash: false
 
@@ -66,7 +66,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: "G-MM5GMXPZPM"
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
