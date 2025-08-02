@@ -5,9 +5,26 @@ import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Get Involved',
+  title: 'Get Involved - Volunteer with Sauga Wellness Foundation',
+  description: 'Join Sauga Wellness Foundation as a volunteer! Support community health programs, wellness workshops, and outreach initiatives in Mississauga. Make a difference in marginalized communities.',
+  canonical: getPermalink('/involve'),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Volunteer with Sauga Wellness Foundation - Get Involved',
+    description: 'Become a volunteer and help us provide culturally tailored health programs and community wellness services in Mississauga and the GTA.',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Get Involved - Sauga Wellness Foundation',
+    description: 'Join our team of volunteers supporting community health and wellness programs in Mississauga.',
+    cardType: 'summary',
+  },
 };
 ---
 

@@ -1,0 +1,114 @@
+---
+// SEO Audit Component - Development only
+// This component helps validate SEO implementation across pages
+
+interface MetaData {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  robots?: {
+    index?: boolean;
+    follow?: boolean;
+  };
+  openGraph?: {
+    title?: string;
+    description?: string;
+    type?: string;
+  };
+  twitter?: {
+    title?: string;
+    description?: string;
+    cardType?: string;
+  };
+}
+
+interface AuditResult {
+  type: 'error' | 'warning' | 'success' | 'info';
+  message: string;
+}
+
+export interface Props {
+  metadata?: MetaData;
+  showAudit?: boolean;
+}
+
+const { metadata, showAudit = false } = Astro.props;
+
+// Only show in development
+const isDev = import.meta.env.DEV;
+const shouldShow = isDev && showAudit;
+
+if (!shouldShow) {
+  // Return empty in production
+}
+
+const auditResults: AuditResult[] = [];
+
+// Check title
+if (!metadata?.title) {
+  auditResults.push({ type: 'error', message: 'Missing page title' });
+} else if (metadata.title.length < 30) {
+  auditResults.push({ type: 'warning', message: 'Title might be too short (< 30 chars)' });
+} else if (metadata.title.length > 60) {
+  auditResults.push({ type: 'warning', message: 'Title might be too long (> 60 chars)' });
+} else {
+  auditResults.push({ type: 'success', message: 'Title length is optimal' });
+}
+
+// Check description
+if (!metadata?.description) {
+  auditResults.push({ type: 'error', message: 'Missing meta description' });
+} else if (metadata.description.length < 120) {
+  auditResults.push({ type: 'warning', message: 'Description might be too short (< 120 chars)' });
+} else if (metadata.description.length > 160) {
+  auditResults.push({ type: 'warning', message: 'Description might be too long (> 160 chars)' });
+} else {
+  auditResults.push({ type: 'success', message: 'Description length is optimal' });
+}
+
+// Check OpenGraph
+if (!metadata?.openGraph?.title) {
+  auditResults.push({ type: 'warning', message: 'Missing OpenGraph title' });
+} else {
+  auditResults.push({ type: 'success', message: 'OpenGraph title present' });
+}
+
+// Check canonical
+if (!metadata?.canonical) {
+  auditResults.push({ type: 'warning', message: 'Missing canonical URL' });
+} else {
+  auditResults.push({ type: 'success', message: 'Canonical URL present' });
+}
+
+// Check robots
+if (metadata?.robots?.index === false) {
+  auditResults.push({ type: 'info', message: 'Page set to noindex' });
+} else {
+  auditResults.push({ type: 'success', message: 'Page is indexable' });
+}
+---
+
+{shouldShow && (
+  <div style="position: fixed; top: 10px; right: 10px; background: white; border: 2px solid #333; padding: 15px; border-radius: 8px; max-width: 300px; z-index: 9999; font-family: monospace; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <h4 style="margin: 0 0 10px 0; color: #333; font-weight: bold;">SEO Audit</h4>
+    <div style="max-height: 200px; overflow-y: auto;">
+      {auditResults.map(result => (
+        <div style={`margin: 5px 0; padding: 3px 6px; border-radius: 3px; background: ${
+          result.type === 'error' ? '#ffebee' : 
+          result.type === 'warning' ? '#fff3e0' : 
+          result.type === 'success' ? '#e8f5e8' : '#e3f2fd'
+        }; color: ${
+          result.type === 'error' ? '#c62828' : 
+          result.type === 'warning' ? '#ef6c00' : 
+          result.type === 'success' ? '#2e7d32' : '#1565c0'
+        };`}>
+          <strong>{result.type.toUpperCase()}:</strong> {result.message}
+        </div>
+      ))}
+    </div>
+    <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #ddd; font-size: 10px; color: #666;">
+      Title: {metadata?.title?.length || 0} chars<br/>
+      Desc: {metadata?.description?.length || 0} chars
+    </div>
+  </div>
+)}
