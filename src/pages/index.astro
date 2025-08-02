@@ -9,7 +9,31 @@ import { getPermalink } from '~/utils/permalinks';
 import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
-  title: 'Sauga Wellness Foundation',
+  title: 'Sauga Wellness Foundation - Community Health & Wellness Programs',
+  description: 'Sauga Wellness Foundation is a not-for-profit organization dedicated to fostering resilient and healthy communities. We provide culturally tailored health programs, newcomer wellness integration, and community health services in Mississauga and surrounding areas.',
+  canonical: getPermalink('/'),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Sauga Wellness Foundation - Community Health & Wellness Programs',
+    description: 'Enhancing awareness and accessibility to healthcare resources for marginalized, racialized communities and newcomers in Mississauga.',
+    type: 'website',
+    images: [
+      {
+        url: '~/assets/images/sauga-wellness-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sauga Wellness Foundation - Community Health Programs'
+      }
+    ],
+  },
+  twitter: {
+    title: 'Sauga Wellness Foundation - Community Health & Wellness',
+    description: 'Fostering resilient and healthy communities through culturally tailored health programs and newcomer wellness integration.',
+    cardType: 'summary_large_image',
+  },
 };
 ---
 

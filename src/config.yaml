@@ -1,30 +1,31 @@
 site:
-  name: SaugaWellness
+  name: Sauga Wellness Foundation
   site: 'https://saugawellness.com'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: todo
+  googleSiteVerificationId: # Add your Google Search Console verification ID here
 
 # Default SEO metadata
 metadata:
   title:
-    default: SaugaWellness
-    template: '%s — SaugaWellness'
-  description: "\U0001F33F Food is Medicine"
+    default: Sauga Wellness Foundation
+    template: '%s | Sauga Wellness Foundation'
+  description: "Sauga Wellness Foundation is a not-for-profit organization fostering resilient and healthy communities through culturally tailored health programs, newcomer wellness integration, and community health services in Mississauga and the Greater Toronto Area."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: SaugaWellness
+    site_name: Sauga Wellness Foundation
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/sauga-wellness-og.jpg'
         width: 1200
-        height: 628
+        height: 630
+        alt: 'Sauga Wellness Foundation - Community Health Programs'
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@saugawellness'
+    site: '@saugawellness'
     cardType: summary_large_image
 
 i18n:
