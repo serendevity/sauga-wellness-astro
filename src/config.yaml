@@ -23,10 +23,7 @@ metadata:
         height: 630
         alt: 'Sauga Wellness Foundation - Community Health Programs'
     type: website
-  twitter:
-    handle: '@saugawellness'
-    site: '@saugawellness'
-    cardType: summary_large_image
+
 
 i18n:
   language: en
