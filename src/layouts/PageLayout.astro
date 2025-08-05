@@ -2,6 +2,7 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
+import DonationModal from '~/components/ui/DonationModal.astro';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -24,4 +25,7 @@ const { metadata } = Astro.props;
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
+  
+  <!-- Donation Modal -->
+  <DonationModal />
 </Layout>

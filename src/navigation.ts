@@ -25,7 +25,7 @@ export const headerData: HeaderProps = {
       href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: 'Donate', href: '', target: '_blank', variant: 'primary' }],
+  actions: [{ text: 'Donate', href: 'javascript:void(0)', onclick: 'openDonationModal()', variant: 'primary' }],
 };
 
 export const footerData: FooterProps = {
