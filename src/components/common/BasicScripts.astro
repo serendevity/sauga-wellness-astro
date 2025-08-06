@@ -40,9 +40,94 @@ import { UI } from 'astrowind:config';
     }
   }
 
+  // Donation Modal functionality using attachEvent pattern
+  function initDonationModal() {
+    const modal = document.getElementById('donation-modal');
+    
+    if (!modal) {
+      console.warn('Donation modal not found on this page');
+      return;
+    }
+
+    // Close modal function
+    function closeModal() {
+      modal.classList.add('closing');
+      setTimeout(() => {
+        modal.classList.remove('closing');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }, 500);
+    }
+
+    // Open modal function
+    function openModal() {
+      // Calculate scrollbar width to prevent page jump
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    // Expose openModal function globally for navigation
+    window.openDonationModal = openModal;
+
+    // Use attachEvent pattern for modal interactions
+    attachEvent('#close-modal-footer', 'click', closeModal);
+    
+    // Close modal on overlay click
+    attachEvent('#donation-modal', 'click', function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    attachEvent([document], 'keydown', function(e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Copy email functionality
+    attachEvent('#copy-email', 'click', async function() {
+      const emailElement = document.getElementById('donation-email');
+      const copyButton = document.getElementById('copy-email');
+      const email = emailElement?.textContent || 'donate@saugawellness.com';
+      
+      try {
+        await navigator.clipboard.writeText(email);
+        
+        // Visual feedback
+        const originalText = copyButton.innerHTML;
+        copyButton.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+        copyButton.title = 'Copied!';
+        
+        setTimeout(() => {
+          copyButton.innerHTML = originalText;
+          copyButton.title = 'Copy email address';
+        }, 2000);
+        
+      } catch (err) {
+        console.error('Failed to copy email:', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+    });
+  }
+
   const onLoad = function () {
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
+
+    // Initialize donation modal functionality
+    initDonationModal();
 
     attachEvent('#header nav', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
