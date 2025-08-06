@@ -65,6 +65,17 @@ const metadata = {
           max-width: 100%;
         }
       </style>
+      <script is:inline>
+        // Prevent duplicate custom element registration errors
+        (function() {
+          const originalDefine = customElements.define;
+          customElements.define = function(name, constructor, options) {
+            if (!customElements.get(name)) {
+              originalDefine.call(this, name, constructor, options);
+            }
+          };
+        })();
+      </script>
     </Fragment>
   </Hero>
 
