@@ -1,10 +1,42 @@
 ---
+// Import all favicon assets
 import favIcon from '~/assets/favicons/favicon.ico';
 import favIconSvg from '~/assets/favicons/favicon.svg';
 import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+import favicon16 from '~/assets/favicons/favicon-16x16.png';
+import favicon32 from '~/assets/favicons/favicon-32x32.png';
+import androidChrome192 from '~/assets/favicons/android-chrome-192x192.png';
+import androidChrome512 from '~/assets/favicons/android-chrome-512x512.png';
 ---
 
+<!-- Standard favicon -->
+<link rel="icon" type="image/x-icon" href={favIcon} />
 <link rel="shortcut icon" href={favIcon} />
+
+<!-- Modern browsers - SVG favicon with dark mode support -->
 <link rel="icon" type="image/svg+xml" href={favIconSvg.src} />
-<link rel="mask-icon" href={favIconSvg.src} color="#8D46E7" />
+
+<!-- PNG fallbacks for different sizes -->
+<link rel="icon" type="image/png" sizes="32x32" href={favicon32.src} />
+<link rel="icon" type="image/png" sizes="16x16" href={favicon16.src} />
+
+<!-- Apple devices -->
 <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+<meta name="apple-mobile-web-app-title" content="Sauga Wellness" />
+
+<!-- Android/Chrome -->
+<link rel="icon" type="image/png" sizes="192x192" href={androidChrome192.src} />
+<link rel="icon" type="image/png" sizes="512x512" href={androidChrome512.src} />
+
+<!-- Safari pinned tab -->
+<link rel="mask-icon" href={favIconSvg.src} color="#4f9f93" />
+
+<!-- Microsoft tiles -->
+<meta name="msapplication-TileColor" content="#4f9f93" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
+
+<!-- Web app manifest -->
+<link rel="manifest" href="/site.webmanifest" />
+
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#4f9f93" />

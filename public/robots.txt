@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow favicon and manifest files
+Allow: /favicon.ico
+Allow: /site.webmanifest
+Allow: /browserconfig.xml
+Allow: /src/assets/favicons/
+
 # Sitemap
 Sitemap: https://saugawellness.com/sitemap-index.xml
 Sitemap: https://saugawellness.com/sitemap-0.xml
