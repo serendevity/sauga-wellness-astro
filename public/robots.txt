@@ -5,7 +5,6 @@ Allow: /
 Allow: /favicon.ico
 Allow: /site.webmanifest
 Allow: /browserconfig.xml
-Allow: /src/assets/favicons/
 
 # Sitemap
 Sitemap: https://saugawellness.com/sitemap-index.xml
