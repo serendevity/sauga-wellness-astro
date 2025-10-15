@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Sauga Wellness Foundation
     images:
-      - url: '~/assets/images/sauga-wellness-og.png'
+      - url: '~/assets/images/sauga-wellness-og.svg'
         width: 1200
         height: 630
         alt: 'Sauga Wellness Foundation - Community Health Programs'
