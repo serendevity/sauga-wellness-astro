@@ -15,7 +15,6 @@ interface MetaData {
     description?: string;
     type?: string;
   };
-
 }
 
 interface AuditResult {
@@ -84,27 +83,40 @@ if (metadata?.robots?.index === false) {
 }
 ---
 
-{shouldShow && (
-  <div style="position: fixed; top: 10px; right: 10px; background: white; border: 2px solid #333; padding: 15px; border-radius: 8px; max-width: 300px; z-index: 9999; font-family: monospace; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-    <h4 style="margin: 0 0 10px 0; color: #333; font-weight: bold;">SEO Audit</h4>
-    <div style="max-height: 200px; overflow-y: auto;">
-      {auditResults.map(result => (
-        <div style={`margin: 5px 0; padding: 3px 6px; border-radius: 3px; background: ${
-          result.type === 'error' ? '#ffebee' : 
-          result.type === 'warning' ? '#fff3e0' : 
-          result.type === 'success' ? '#e8f5e8' : '#e3f2fd'
-        }; color: ${
-          result.type === 'error' ? '#c62828' : 
-          result.type === 'warning' ? '#ef6c00' : 
-          result.type === 'success' ? '#2e7d32' : '#1565c0'
-        };`}>
-          <strong>{result.type.toUpperCase()}:</strong> {result.message}
-        </div>
-      ))}
+{
+  shouldShow && (
+    <div style="position: fixed; top: 10px; right: 10px; background: white; border: 2px solid #333; padding: 15px; border-radius: 8px; max-width: 300px; z-index: 9999; font-family: monospace; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <h4 style="margin: 0 0 10px 0; color: #333; font-weight: bold;">SEO Audit</h4>
+      <div style="max-height: 200px; overflow-y: auto;">
+        {auditResults.map((result) => (
+          <div
+            style={`margin: 5px 0; padding: 3px 6px; border-radius: 3px; background: ${
+              result.type === 'error'
+                ? '#ffebee'
+                : result.type === 'warning'
+                  ? '#fff3e0'
+                  : result.type === 'success'
+                    ? '#e8f5e8'
+                    : '#e3f2fd'
+            }; color: ${
+              result.type === 'error'
+                ? '#c62828'
+                : result.type === 'warning'
+                  ? '#ef6c00'
+                  : result.type === 'success'
+                    ? '#2e7d32'
+                    : '#1565c0'
+            };`}
+          >
+            <strong>{result.type.toUpperCase()}:</strong> {result.message}
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #ddd; font-size: 10px; color: #666;">
+        Title: {metadata?.title?.length || 0} chars
+        <br />
+        Desc: {metadata?.description?.length || 0} chars
+      </div>
     </div>
-    <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #ddd; font-size: 10px; color: #666;">
-      Title: {metadata?.title?.length || 0} chars<br/>
-      Desc: {metadata?.description?.length || 0} chars
-    </div>
-  </div>
-)}
+  )
+}

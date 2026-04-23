@@ -43,7 +43,7 @@ import { UI } from 'astrowind:config';
   // Donation Modal functionality using attachEvent pattern
   function initDonationModal() {
     const modal = document.getElementById('donation-modal');
-    
+
     if (!modal) {
       console.warn('Donation modal not found on this page');
       return;
@@ -64,7 +64,7 @@ import { UI } from 'astrowind:config';
     function openModal() {
       // Calculate scrollbar width to prevent page jump
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      
+
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -75,40 +75,40 @@ import { UI } from 'astrowind:config';
 
     // Use attachEvent pattern for modal interactions
     attachEvent('#close-modal-footer', 'click', closeModal);
-    
+
     // Close modal on overlay click
-    attachEvent('#donation-modal', 'click', function(e) {
+    attachEvent('#donation-modal', 'click', function (e) {
       if (e.target === modal) {
         closeModal();
       }
     });
 
     // Close modal on Escape key
-    attachEvent([document], 'keydown', function(e) {
+    attachEvent([document], 'keydown', function (e) {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();
       }
     });
 
     // Copy email functionality
-    attachEvent('#copy-email', 'click', async function() {
+    attachEvent('#copy-email', 'click', async function () {
       const emailElement = document.getElementById('donation-email');
       const copyButton = document.getElementById('copy-email');
       const email = emailElement?.textContent || 'donate@saugawellness.com';
-      
+
       try {
         await navigator.clipboard.writeText(email);
-        
+
         // Visual feedback
         const originalText = copyButton.innerHTML;
-        copyButton.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+        copyButton.innerHTML =
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"></polyline></svg>';
         copyButton.title = 'Copied!';
-        
+
         setTimeout(() => {
           copyButton.innerHTML = originalText;
           copyButton.title = 'Copy email address';
         }, 2000);
-        
       } catch (err) {
         console.error('Failed to copy email:', err);
         // Fallback for older browsers

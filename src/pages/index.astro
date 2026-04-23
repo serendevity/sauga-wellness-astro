@@ -10,7 +10,8 @@ import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Sauga Wellness Foundation - Community Health & Wellness Programs',
-  description: 'Sauga Wellness Foundation is a not-for-profit organization dedicated to fostering resilient and healthy communities. We provide culturally tailored health programs, newcomer wellness integration, and community health services in Mississauga and surrounding areas.',
+  description:
+    'Sauga Wellness Foundation is a not-for-profit organization dedicated to fostering resilient and healthy communities. We provide culturally tailored health programs, newcomer wellness integration, and community health services in Mississauga and surrounding areas.',
   canonical: getPermalink('/'),
   robots: {
     index: true,
@@ -18,15 +19,16 @@ const metadata = {
   },
   openGraph: {
     title: 'Sauga Wellness Foundation - Community Health & Wellness Programs',
-    description: 'Enhancing awareness and accessibility to healthcare resources for marginalized communities and newcomers in Mississauga.',
+    description:
+      'Enhancing awareness and accessibility to healthcare resources for marginalized communities and newcomers in Mississauga.',
     type: 'website',
     images: [
       {
         url: '~/assets/images/sauga-wellness-og.svg',
         width: 1200,
         height: 630,
-        alt: 'Sauga Wellness Foundation - Community Health Programs'
-      }
+        alt: 'Sauga Wellness Foundation - Community Health Programs',
+      },
     ],
   },
 };
@@ -52,7 +54,8 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Our vision is to enhance awareness and accessibilty to healthcare resources by actively engaging marginalized communities and newcomers.
+      Our vision is to enhance awareness and accessibilty to healthcare resources by actively engaging marginalized
+      communities and newcomers.
     </Fragment>
 
     <Fragment slot="image">
@@ -65,9 +68,9 @@ const metadata = {
       </style>
       <script is:inline>
         // Prevent duplicate custom element registration errors
-        (function() {
+        (function () {
           const originalDefine = customElements.define;
-          customElements.define = function(name, constructor, options) {
+          customElements.define = function (name, constructor, options) {
             if (!customElements.get(name)) {
               originalDefine.call(this, name, constructor, options);
             }

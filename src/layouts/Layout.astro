@@ -15,8 +15,8 @@ import StructuredData from '~/components/common/StructuredData.astro';
 
 import DonationModal from '~/components/ui/DonationModal.astro';
 
-// Comment the line below to disable View Transitions
-import { ViewTransitions } from 'astro:transitions';
+// View Transitions are now built-in Astro 6 - removed explicit import
+// import { ViewTransitions } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
@@ -37,20 +37,24 @@ const { language, textDirection } = I18N;
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
-    
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9D3P13WB1"></script>
-    <script is:inline set:html={`
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-L9D3P13WB1"></script>
+    <script
+      is:inline
+      set:html={`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-L9D3P13WB1');
-    `} />
-    
+    `}
+    />
+
     <StructuredData />
 
     <!-- Comment the line below to disable View Transitions -->
-    <ViewTransitions fallback="swap" />
+    <!-- ViewTransitions are built-in to Astro 6 and enabled by default -->
+    <!-- Removed explicit <ViewTransitions fallback="swap" /> component -->
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
