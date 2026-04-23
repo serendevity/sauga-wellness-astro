@@ -1,11 +1,23 @@
 {
-  "name": "@onwidget/astrowind",
-  "version": "1.0.0-beta.46",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "name": "sauga-wellness-astro",
+  "version": "1.0.0",
+  "description": "Sauga Wellness Foundation website - A wellness advocacy organization dedicated to health and community.",
   "type": "module",
   "private": true,
+  "author": "Sauga Wellness Foundation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serendevity/sauga-wellness-astro"
+  },
+  "keywords": [
+    "wellness",
+    "health",
+    "non-profit",
+    "astro",
+    "tailwind"
+  ],
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
+    "node": "^20.3.0 || >= 22.0.0"
   },
   "scripts": {
     "dev": "astro dev",
